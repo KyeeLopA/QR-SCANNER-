@@ -1,10 +1,3 @@
-Tentu! Setelah semua kode selesai, membuat file `README.md` adalah langkah yang sangat penting. File ini berfungsi sebagai panduan, dokumentasi, dan halaman muka proyek Anda, terutama untuk menjelaskan fitur PWA dan cara instalasi.
-
-Berikut adalah draf `README.md` dalam Bahasa Indonesia yang bisa langsung Anda gunakan:
-
----
-
-## 📄 File: `README.md`
 
 # 🚀 QR Scanner Pro - Progressive Web App (PWA)
 
