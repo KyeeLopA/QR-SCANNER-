@@ -1,0 +1,156 @@
+/* Definisikan Variabel Warna */
+:root {
+    --primary-color: #3498db; 
+    --secondary-color: #2c3e50; 
+    --background-color: #491500; 
+    --card-background: #ffffff; 
+    --success-color: #27ae60; 
+    
+    /* Variabel untuk Glassmorphism */
+    --glass-opacity: rgba(52, 152, 219, 0.7); 
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    --shadow-heavy: 0 8px 25px rgba(0, 0, 0, 0.2); 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--secondary-color);
+}
+
+/* Header Aplikasi (Efek Kaca Tembus/Glassmorphism) */
+header {
+    background-color: var(--glass-opacity); 
+    
+    backdrop-filter: blur(8px) saturate(180%);
+    -webkit-backdrop-filter: blur(8px) saturate(180%); 
+    
+    color: var(--card-background);
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: var(--shadow-heavy);
+    margin-bottom: 0; 
+    
+    position: sticky;
+    top: 0;
+    z-index: 100; 
+}
+
+header h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.8em;
+}
+
+header p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Container Utama */
+.app-container {
+    width: 90%;
+    max-width: 500px;
+    margin-top: 80px; 
+    margin-bottom: 20px;
+    padding: 10px; 
+}
+
+/* Area Video/Kamera */
+#video {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: var(--shadow-heavy);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+#video.scanning {
+    border: 5px solid var(--primary-color);
+}
+
+#video.found {
+    border: 5px solid var(--success-color);
+    transform: scale(0.98); 
+}
+
+/* --- Area Kontrol Tombol --- */
+#controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.control-btn {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #bdc3c7; 
+    color: var(--secondary-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.control-btn.active {
+    background-color: var(--primary-color);
+    color: var(--card-background);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
+}
+
+/* Area Hasil Pemindaian (Card) */
+#output {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.5s ease-in-out;
+}
+
+#output-message {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--primary-color);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--background-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Utility Class */
+.hidden {
+    display: none !important;
+}
+
+code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #c0392b; 
+    font-weight: 600;
+}
+
+/* --- Mode Galeri (Menyembunyikan Video) --- */
+body.gallery-mode #video {
+    display: none;
+}
+body.gallery-mode .app-container {
+    border: 3px dashed #bdc3c7;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3498db"> 
+    <link rel="manifest" href="/manifest.json"> 
+    
+    <title>QR Scanner Pro (PWA)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json"
+</head>
+<body>
+
+    <header>
+        <h1>Aplikasi Pindai QR</h1>
+        <p>Scanner Cepat & Terintegrasi PWA</p>
+    </header>
+
+    <div class="app-container">
+        
+        <video id="video" autoplay playsinline class="scanning"></video>
+
+        <input type="file" id="file-input" accept="image/*" style="display:none;">
+
+        <canvas id="canvas" style="display:none;"></canvas>
+
+        <div id="controls">
+            <button id="camera-button" class="control-btn active">📷 Scan Langsung</button>
+            <button id="gallery-button" class="control-btn">🖼️ Ambil dari Galeri</button>
+        </div>
+
+        <div id="output">
+            <div id="output-message">Memuat aplikasi...</div>
+            <div id="output-explanation" class="hidden"></div>
+        </div>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
